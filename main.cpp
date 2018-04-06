@@ -152,7 +152,7 @@ int main(int argc, char** argv)
 int** readConnectedComponent(string filename, int &width, int &height)
 {
     int** labelOfPixel=NULL;
-    ifstream myfile (filename);
+    ifstream myfile (filename.c_str());
     if (myfile.is_open()) {
         myfile >> width >> height;
         //read table of labels
