@@ -49,7 +49,7 @@ double cross(const Point &p0, const Point &p1, const Point &p2);
 
 /******* Polygone ********/
 bool isInPolygon(const vector<Point>& polygon, Point p);
-//bool isInPolygon(const vector<vector<Point>>& polygon, Point p);
+bool isInPolygon(const vector<vector<Point> >& polygon, Point p);
 bool isInPolygon(const vector<RealPoint>& polygon, Point p);
 /******* Polygone ********/
 

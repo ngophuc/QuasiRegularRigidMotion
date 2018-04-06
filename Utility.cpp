@@ -269,7 +269,7 @@ bool isInPolygon(const vector<Point>& polygon, Point p)
     return res;
 }
 
-bool isInPolygon(const vector<vector<Point>>& polygon, Point p)
+bool isInPolygon(const vector<vector<Point> >& polygon, Point p)
 {
     for(size_t it_p=0; it_p<polygon.size();it_p++)
         if(isInPolygon(polygon.at(it_p),p))
