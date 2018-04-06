@@ -3,7 +3,7 @@
 int **labelOfPixel;
 int countRegion;
 
-int findIdEquivalentRegion(vector<vector<int>> regions, int labelCurrent, int numberRegion)
+int findIdEquivalentRegion(vector<vector<int> > regions, int labelCurrent, int numberRegion)
 {
     int rows = numberRegion;
     for (int i = 0; i <= rows; ++i)
@@ -48,7 +48,7 @@ void mergeTwoVector(vector<int> &v1, vector<int> &v2)
     v2.clear();
 }
 
-void mergeTwoEquivalentRegion(vector<vector<int>> &equivalentRegions, int label1, int label2, int countRegion)
+void mergeTwoEquivalentRegion(vector<vector<int> > &equivalentRegions, int label1, int label2, int countRegion)
 {
     int idEquivalentRegionCurrentPixel = findIdEquivalentRegion(equivalentRegions, label1, countRegion);
     int idEquivalentRegionNeighborPixel = findIdEquivalentRegion(equivalentRegions, label2, countRegion);
@@ -121,7 +121,7 @@ void coloringConnectedComponent(ConstImageAdapterForThresholderImage &thresholde
         aBoard.saveSVG(filename);
 }
 
-vector<vector<int>> fourConnectedComponent(ConstImageAdapterForThresholderImage &thresholderImage, int value)
+vector<vector<int> > fourConnectedComponent(ConstImageAdapterForThresholderImage &thresholderImage, int value)
 {
     int labelCurrent = 0;
     countRegion = 0;
@@ -130,7 +130,7 @@ vector<vector<int>> fourConnectedComponent(ConstImageAdapterForThresholderImage 
 
     int heightImg = domain.upperBound()[1] - domain.lowerBound()[1];
 
-    vector<vector<int>> equivalentRegions(heightImg, vector<int>( 1, -2 ));
+    vector<vector<int> > equivalentRegions(heightImg, vector<int>( 1, -2 ));
 
     for (int i = domain.lowerBound()[0]; i <= domain.upperBound()[0]; ++i)
     {
@@ -202,11 +202,11 @@ vector<vector<int>> fourConnectedComponent(ConstImageAdapterForThresholderImage 
     return equivalentRegions;
 }
 
-vector<vector<int>> eightConnectedComponent(ConstImageAdapterForThresholderImage &thresholderImage, int value)
+vector<vector<int> > eightConnectedComponent(ConstImageAdapterForThresholderImage &thresholderImage, int value)
 {
     Domain domain = thresholderImage.domain();
 
-    vector<vector<int>> equivalentRegions = fourConnectedComponent(thresholderImage, value);
+    vector<vector<int> > equivalentRegions = fourConnectedComponent(thresholderImage, value);
 
     for (int i = domain.lowerBound()[0]; i < domain.upperBound()[0]; ++i)
     {
@@ -234,13 +234,13 @@ vector<vector<int>> eightConnectedComponent(ConstImageAdapterForThresholderImage
     return equivalentRegions;
 }
 
-vector<int> mergeRegionPixelOneAndPixelZero(vector<vector<int>> &equivalentRegions, vector<vector<int>> &equivalentRegions1,
+vector<int> mergeRegionPixelOneAndPixelZero(vector<vector<int> > &equivalentRegions, vector<vector<int> > &equivalentRegions1,
                                             ConstImageAdapterForThresholderImage &thresholderImage, int sizeEquivalentRegion, int sizeEquivalentRegion1, int numberPixelEnlarge=0)
 {
     vector<int> regions;
     Domain domain = thresholderImage.domain();
     int count = 0;
-    vector<vector<int>> labelOfPixelCopy(domain.upperBound()[0] - domain.lowerBound()[0] + 1, vector<int>( domain.upperBound()[1] - domain.lowerBound()[1] + 1, -1));
+    vector<vector<int> > labelOfPixelCopy(domain.upperBound()[0] - domain.lowerBound()[0] + 1, vector<int>( domain.upperBound()[1] - domain.lowerBound()[1] + 1, -1));
     for (int j = domain.lowerBound()[0]; j <= domain.upperBound()[0]; ++j)
     {
         for (int k = domain.lowerBound()[1]; k <= domain.upperBound()[1]; ++k)
@@ -344,7 +344,7 @@ void generateTextImage(vector<Region> &regions, Domain domain, string filename, 
     int height = domain.upperBound()[1] - domain.lowerBound()[1] + 1;
     outfile<<width<<" "<<height<<endl;
 
-    vector<vector<int>> idRegions( width, vector<int>(1, -1 ));
+    vector<vector<int> > idRegions( width, vector<int>(1, -1 ));
     for(int i = 0; i < width; i++)
     {
         for(int j = 1; j < height; j++)
@@ -387,14 +387,14 @@ void getConnectedComponent(string input, string output, int threshold, int typeC
     //Init labels
     initLabels(domainThresholderImage);
     //Compute connected component of objects
-    vector<vector<int>> equivalentRegions;
+    vector<vector<int> > equivalentRegions;
     if (typeConnectedObject == 4)//typeConnectedPixelOne
         equivalentRegions = fourConnectedComponent(thresholderImage, 1);
     else
         equivalentRegions = eightConnectedComponent(thresholderImage, 1);
     int sizeEquivalentRegion = countRegion;
     //Compute connected component of background
-    vector<vector<int>> equivalentRegions1;
+    vector<vector<int> > equivalentRegions1;
     if (typeConnectedBackground == 4)//typeConnectedPixelZero
         equivalentRegions1 = fourConnectedComponent(thresholderImage, 0);
     else
