@@ -154,7 +154,7 @@ int main(int argc, char** argv)
 
     /********** Digitize the transformed polygon **********/
     /********** Digitize the transformed polygon **********/
-
+    cout<<"Well done !"<<endl;
     return 1;
 }
 
