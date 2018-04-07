@@ -127,11 +127,21 @@ int main(int argc, char** argv)
         aBoard.drawLine(vecPolygon.at(id).back()[0],vecPolygon.at(id).back()[1],vecPolygon.at(id).front()[0],vecPolygon.at(id).front()[1]);
     }
     if(eps){
-        filename=outputFile+"_Polygon.eps";
+        //filename=outputFile+"_Polygon.eps";
+        filename=outputFile+"_tpoint.eps";
+        aBoard.saveEPS(filename.c_str());
+        filename=outputFile+"_thull.eps";
+        aBoard.saveEPS(filename.c_str());
+        filename=outputFile+"_tpoly.eps";
         aBoard.saveEPS(filename.c_str());
     }
     else{
-        filename=outputFile+"_Polygon.svg";
+        //filename=outputFile+"_Polygon.svg";
+        filename=outputFile+"_tpoint.svg";
+        aBoard.saveSVG(filename.c_str());
+        filename=outputFile+"_thull.svg";
+        aBoard.saveSVG(filename.c_str());
+        filename=outputFile+"_tpoly.svg";
         aBoard.saveSVG(filename.c_str());
     }
     /********** Extract polygon from polyline ************/
