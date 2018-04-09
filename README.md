@@ -74,7 +74,7 @@ http://ipol-geometry.loria.fr/~phuc/ipol_demo/RigidMotion2D/
 		</td>		
 		<td align="center" valign="center">
 			<a href="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/square21_points.eps">
-				<img width="120" src="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/square21_points.png" alt="Input points" />
+				<img width="100" src="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/square21_points.png" alt="Input points" />
 			</a>	
 		<br />
 		Input points
