@@ -166,7 +166,7 @@ http://ipol-geometry.loria.fr/~phuc/ipol_demo/RigidMotion2D/
 		</td>		
 		<td align="center" valign="center">
 			<a href="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/leaf_points.eps">
-				<img width="100" src="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/leaf_points.png" alt="Input points" />
+				<img width="110" src="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/leaf_points.png" alt="Input points" />
 			</a>	
 		<br />
 		Input points
@@ -212,7 +212,7 @@ http://ipol-geometry.loria.fr/~phuc/ipol_demo/RigidMotion2D/
 		</td>		
 		<td align="center" valign="center">
 			<a href="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/snowflake_points.eps">
-				<img width="100" src="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/snowflake_points.png" alt="Input points" />
+				<img width="110" src="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/snowflake_points.png" alt="Input points" />
 			</a>	
 		<br />
 		Input points
