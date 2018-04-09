@@ -28,10 +28,10 @@ http://ipol-geometry.loria.fr/~phuc/ipol_demo/RigidMotion2D/
 		</td>		
 		<td align="center" valign="center">
 			<a href="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/circle10_points.eps">
-				<img width="150" src="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/circle10_points.png" alt="Input points" />
+				<img width="150" src="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/circle10_tpoint.png" alt="Input points" />
 			</a>	
 		<br />
-		Input curve
+		Input points
 		</td>
 		<td align="center" valign="center">
 			<a href="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/circle10_tpoint.eps">
