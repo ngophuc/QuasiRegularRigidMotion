@@ -12,16 +12,16 @@ http://ipol-geometry.loria.fr/~phuc/ipol_demo/RigidMotion2D/
 
 # Examples
 
-<p>File <a href="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Samples/pentagonNoise4.sdp">pentagonNoise4.sdp</a>: </p>&#x000A;&#x000A;
+<p>File <a href="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Samples/circle10.pgm">circle10.pgm</a>: </p>&#x000A;&#x000A;
 <pre class="code highlight js-syntax-highlight plaintext">
-<code>./testRigidTransform -i ../Samples/pentagonNoise4.sdp -o ../Results/pentagonNoise4 -d ../ImaGene-forIPOL &#x000A;--maxScale 10 --samplingStep 1.0</code>
+<code>./testRigidTransform -i ../Samples/circle10.pgm -o ../Results/circle10 -d ../ImaGene-forIPOL &#x000A;--maxScale 10 --samplingStep 1.0</code>
 </pre>&#x000A;&#x000A;
 <p>
 	<table cellpadding="5">
 		<tr>
 		<td align="center" valign="center">
-			<a href="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Samples/pentagonNoise4.png">
-				<img width="150" src="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Samples/pentagonNoise4.png" alt="Input image" />
+			<a href="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Samples/circle10.png">
+				<img width="150" src="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Samples/circle10.png" alt="Input image" />
 			</a>	
 		<br />
 		Input image
@@ -53,7 +53,7 @@ http://ipol-geometry.loria.fr/~phuc/ipol_demo/RigidMotion2D/
 
 <p>File <a href="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Samples/circle50.sdp">circle50.sdp</a>: </p>&#x000A;&#x000A;
 <pre class="code highlight js-syntax-highlight plaintext">
-<code>./testRigidTransform -i ../Samples/circle50.sdp -o ../Results/circle50 -d ../ImaGene-forIPOL &#x000A;--maxScale 10 --samplingStep 1.0</code>
+<code>./testRigidTransform -i ../Samples/square21.pgm -o ../Results/square21 -d ../ImaGene-forIPOL &#x000A;--maxScale 10 --samplingStep 1.0</code>
 </pre>&#x000A;&#x000A;
 <p>
 	<table cellpadding="5">
