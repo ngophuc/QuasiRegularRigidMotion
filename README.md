@@ -14,7 +14,7 @@ http://ipol-geometry.loria.fr/~phuc/ipol_demo/RigidMotion2D/
 
 <p>File <a href="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Samples/pentagonNoise4.sdp">pentagonNoise4.sdp</a>: </p>&#x000A;&#x000A;
 <pre class="code highlight js-syntax-highlight plaintext">
-<code>./ATC_Computation -i ../Samples/pentagonNoise4.sdp -o ../Results/pentagonNoise4 -d ../ImaGene-forIPOL &#x000A;--maxScale 10 --samplingStep 1.0</code>
+<code>./testRigidTransform -i ../Samples/pentagonNoise4.sdp -o ../Results/pentagonNoise4 -d ../ImaGene-forIPOL &#x000A;--maxScale 10 --samplingStep 1.0</code>
 </pre>&#x000A;&#x000A;
 <p>
 	<table cellpadding="5">
@@ -53,7 +53,7 @@ http://ipol-geometry.loria.fr/~phuc/ipol_demo/RigidMotion2D/
 
 <p>File <a href="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Samples/circle50.sdp">circle50.sdp</a>: </p>&#x000A;&#x000A;
 <pre class="code highlight js-syntax-highlight plaintext">
-<code>./ATC_Computation -i ../Samples/circle50.sdp -o ../Results/circle50 -d ../ImaGene-forIPOL &#x000A;--maxScale 10 --samplingStep 1.0</code>
+<code>./testRigidTransform -i ../Samples/circle50.sdp -o ../Results/circle50 -d ../ImaGene-forIPOL &#x000A;--maxScale 10 --samplingStep 1.0</code>
 </pre>&#x000A;&#x000A;
 <p>
 	<table cellpadding="5">
@@ -92,7 +92,7 @@ http://ipol-geometry.loria.fr/~phuc/ipol_demo/RigidMotion2D/
 
 <p>File <a href="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Samples/circle50Noise4.sdp">circle50Noise4.sdp</a>: </p>&#x000A;&#x000A;
 <pre class="code highlight js-syntax-highlight plaintext">
-<code>./ATC_Computation -i ../Samples/circle50Noise4.sdp -o ../Results/circle50Noise4 -d ../ImaGene-forIPOL &#x000A;--maxScale 10 --samplingStep 1.0</code>
+<code>./testRigidTransform -i ../Samples/circle50Noise4.sdp -o ../Results/circle50Noise4 -d ../ImaGene-forIPOL &#x000A;--maxScale 10 --samplingStep 1.0</code>
 </pre>&#x000A;&#x000A;
 <p>
 	<table cellpadding="5">
@@ -131,7 +131,7 @@ http://ipol-geometry.loria.fr/~phuc/ipol_demo/RigidMotion2D/
 
 <p>File <a href="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Samples/CircleRect.sdp">CircleRect.sdp</a>: </p>&#x000A;&#x000A;
 <pre class="code highlight js-syntax-highlight plaintext">
-<code>./ATC_Computation -i ../Samples/CircleRect.sdp -o ../Results/CircleRect -d ../ImaGene-forIPOL &#x000A;--maxScale 10 --samplingStep 1.0</code>
+<code>./testRigidTransform -i ../Samples/CircleRect.sdp -o ../Results/CircleRect -d ../ImaGene-forIPOL &#x000A;--maxScale 10 --samplingStep 1.0</code>
 </pre>&#x000A;&#x000A;
 <p>
 	<table cellpadding="5">
@@ -170,7 +170,7 @@ http://ipol-geometry.loria.fr/~phuc/ipol_demo/RigidMotion2D/
 
 <p>File <a href="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Samples/flower100Noise4.sdp">flower100Noise4.sdp</a>: </p>&#x000A;&#x000A;
 <pre class="code highlight js-syntax-highlight plaintext">
-<code>./ATC_Computation -i ../Samples/flower100Noise4.sdp -o ../Results/flower100Noise4 -d ../ImaGene-forIPOL &#x000A;--maxScale 10 --samplingStep 1.0</code>
+<code>./testRigidTransform -i ../Samples/flower100Noise4.sdp -o ../Results/flower100Noise4 -d ../ImaGene-forIPOL &#x000A;--maxScale 10 --samplingStep 1.0</code>
 </pre>&#x000A;&#x000A;
 <p>
 	<table cellpadding="5">
