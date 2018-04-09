@@ -71,28 +71,35 @@ http://ipol-geometry.loria.fr/~phuc/ipol_demo/RigidMotion2D/
 			</a>	
 		<br />
 		Input image
-		</td>	
+		</td>		
 		<td align="center" valign="center">
-			<a href="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/circle50.pdf">
-				<img width="150" src="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/circle50.png" alt="Input curve" />
+			<a href="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/square21_points.eps">
+				<img width="120" src="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/square21_points.png" alt="Input points" />
 			</a>	
 		<br />
-		Input curve
+		Input points
 		</td>
 		<td align="center" valign="center">
-			<a href="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/circle50DP.pdf">
-				<img width="150" src="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/circle50DP.png" alt="DP result" />
+			<a href="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/square21_tpoint.eps">
+				<img width="100" src="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/square21_tpoint.png" alt="T_point" />
 			</a>
 		<br />
-		Dominant points (without optimisation)
+		Rigid motion point-by-point
 		</td>
-    <td align="center" valign="center">
-			<a href="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/circle50newDP.pdf">
-				<img width="150" src="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/circle50newDP.png" alt="DP result" />
+    		<td align="center" valign="center">
+			<a href="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/square21_thull.eps">
+				<img width="90" src="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/square21_thull.png" alt="T_hull" />
 			</a>
 		<br />
-		Dominant points (with optimisation)
-		</td>
+		Rigid motion by convex hull
+		</td>  
+		<td align="center" valign="center">
+			<a href="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/square21_tpoly.pdf">
+				<img width="90" src="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/square21_tpoly.png" alt="T_poly" />
+			</a>
+		<br />
+		Rigid motion by polygonalization
+		</td>  	
 		</tr>
 	</table>
 </p>
