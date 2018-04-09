@@ -122,7 +122,7 @@ http://ipol-geometry.loria.fr/~phuc/ipol_demo/RigidMotion2D/
 		</td>
     		<td align="center" valign="center">
 			<a href="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/flower_thull.eps">
-				<img width="90" src="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/flower_thull.png" alt="T_hull" />
+				<img width="100" src="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/flower_thull.png" alt="T_hull" />
 			</a>
 		</td>  
 		<td align="center" valign="center">
@@ -162,8 +162,6 @@ http://ipol-geometry.loria.fr/~phuc/ipol_demo/RigidMotion2D/
 			<a href="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/leaf_tpoint.eps">
 				<img width="100" src="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/leaf_tpoint.png" alt="T_point" />
 			</a>
-		<br />
-		Rigid motion point-by-point
 		</td>
     		<td align="center" valign="center">
 			<a href="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/leaf_thull.eps">
