@@ -23,37 +23,34 @@ http://ipol-geometry.loria.fr/~phuc/ipol_demo/RigidMotion2D/
 			<a href="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Samples/circle10.png">
 				<img width="150" src="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Samples/circle10.png" alt="Input image" />
 			</a>	
-		<br />
-		Input image
 		</td>		
 		<td align="center" valign="center">
 			<a href="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/circle10_points.eps">
 				<img width="120" src="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/circle10_points.png" alt="Input points" />
 			</a>	
-		<br />
-		Input points
 		</td>
 		<td align="center" valign="center">
 			<a href="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/circle10_tpoint.eps">
 				<img width="100" src="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/circle10_tpoint.png" alt="T_point" />
 			</a>
-		<br />
-		Rigid motion point-by-point
 		</td>
     		<td align="center" valign="center">
 			<a href="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/circle10_thull.eps">
 				<img width="90" src="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/circle10_thull.png" alt="T_hull" />
 			</a>
-		<br />
-		Rigid motion by convex hull
 		</td>  
 		<td align="center" valign="center">
 			<a href="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/circle10_tpoly.pdf">
 				<img width="90" src="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/circle10_tpoly.png" alt="T_poly" />
 			</a>
-		<br />
-		Rigid motion by polygonalization
 		</td>  	
+		</tr>
+		<tr>
+			<td align="center" valign="center">  Input image </td>
+			<td align="center" valign="center">  Input points </td>
+			<td align="center" valign="center">  Rigid motion point-by-point </td>
+			<td align="center" valign="center">  Rigid motion by convex hull </td>
+			<td align="center" valign="center">  Rigid motion by polygonalization </td>
 		</tr>
 	</table>
 </p>
@@ -69,37 +66,34 @@ http://ipol-geometry.loria.fr/~phuc/ipol_demo/RigidMotion2D/
 			<a href="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Samples/square21.png">
 				<img width="150" src="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Samples/square21.png" alt="Input image" />
 			</a>	
-		<br />
-		Input image
 		</td>		
 		<td align="center" valign="center">
 			<a href="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/square21_points.eps">
 				<img width="100" src="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/square21_points.png" alt="Input points" />
 			</a>	
-		<br />
-		Input points
 		</td>
 		<td align="center" valign="center">
 			<a href="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/square21_tpoint.eps">
 				<img width="100" src="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/square21_tpoint.png" alt="T_point" />
 			</a>
-		<br />
-		Rigid motion point-by-point
 		</td>
     		<td align="center" valign="center">
 			<a href="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/square21_thull.eps">
-				<img width="90" src="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/square21_thull.png" alt="T_hull" />
+				<img width="100" src="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/square21_thull.png" alt="T_hull" />
 			</a>
-		<br />
-		Rigid motion by convex hull
 		</td>  
 		<td align="center" valign="center">
 			<a href="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/square21_tpoly.eps">
-				<img width="90" src="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/square21_tpoly.png" alt="T_poly" />
+				<img width="100" src="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/square21_tpoly.png" alt="T_poly" />
 			</a>
-		<br />
-		Rigid motion by polygonalization
 		</td>  	
+		</tr>
+		<tr>
+			<td align="center" valign="center">  Input image </td>
+			<td align="center" valign="center">  Input points </td>
+			<td align="center" valign="center">  Rigid motion point-by-point </td>
+			<td align="center" valign="center">  Rigid motion by convex hull </td>
+			<td align="center" valign="center">  Rigid motion by polygonalization </td>
 		</tr>
 	</table>
 </p>
@@ -113,39 +107,36 @@ http://ipol-geometry.loria.fr/~phuc/ipol_demo/RigidMotion2D/
 		<tr>
 		<td align="center" valign="center">
 			<a href="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Samples/flower.png">
-				<img width="150" src="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Samples/flower.png" alt="Input image" />
+				<img width="130" src="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Samples/flower.png" alt="Input image" />
 			</a>	
-		<br />
-		Input image
 		</td>		
 		<td align="center" valign="center">
 			<a href="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/flower_points.eps">
 				<img width="120" src="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/flower_points.png" alt="Input points" />
-			</a>	
-		<br />
-		Input points
+			</a>
 		</td>
 		<td align="center" valign="center">
 			<a href="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/flower_tpoint.eps">
 				<img width="100" src="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/flower_tpoint.png" alt="T_point" />
 			</a>
-		<br />
-		Rigid motion point-by-point
 		</td>
     		<td align="center" valign="center">
 			<a href="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/flower_thull.eps">
 				<img width="100" src="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/flower_thull.png" alt="T_hull" />
 			</a>
-		<br />
-		Rigid motion by convex hull
 		</td>  
 		<td align="center" valign="center">
 			<a href="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/flower_tpoly.eps">
 				<img width="100" src="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/flower_tpoly.png" alt="T_poly" />
 			</a>
-		<br />
-		Rigid motion by polygonalization
 		</td>  	
+		</tr>
+		<tr>
+			<td align="center" valign="center">  Input image </td>
+			<td align="center" valign="center">  Input points </td>
+			<td align="center" valign="center">  Rigid motion point-by-point </td>
+			<td align="center" valign="center">  Rigid motion by convex hull </td>
+			<td align="center" valign="center">  Rigid motion by polygonalization </td>
 		</tr>
 	</table>
 </p>
@@ -159,39 +150,36 @@ http://ipol-geometry.loria.fr/~phuc/ipol_demo/RigidMotion2D/
 		<tr>
 		<td align="center" valign="center">
 			<a href="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Samples/leaf.png">
-				<img width="150" src="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Samples/leaf.png" alt="Input image" />
-			</a>	
-		<br />
-		Input image
+				<img width="120" src="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Samples/leaf.png" alt="Input image" />
+			</a>
 		</td>		
 		<td align="center" valign="center">
 			<a href="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/leaf_points.eps">
-				<img width="100" src="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/leaf_points.png" alt="Input points" />
-			</a>	
-		<br />
-		Input points
+				<img width="110" src="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/leaf_points.png" alt="Input points" />
+			</a>
 		</td>
 		<td align="center" valign="center">
 			<a href="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/leaf_tpoint.eps">
 				<img width="100" src="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/leaf_tpoint.png" alt="T_point" />
 			</a>
-		<br />
-		Rigid motion point-by-point
 		</td>
     		<td align="center" valign="center">
 			<a href="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/leaf_thull.eps">
 				<img width="100" src="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/leaf_thull.png" alt="T_hull" />
 			</a>
-		<br />
-		Rigid motion by convex hull
 		</td>  
 		<td align="center" valign="center">
 			<a href="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/leaf_tpoly.eps">
 				<img width="100" src="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/leaf_tpoly.png" alt="T_poly" />
 			</a>
-		<br />
-		Rigid motion by polygonalization
 		</td>  	
+		</tr>
+		<tr>
+			<td align="center" valign="center">  Input image </td>
+			<td align="center" valign="center">  Input points </td>
+			<td align="center" valign="center">  Rigid motion point-by-point </td>
+			<td align="center" valign="center">  Rigid motion by convex hull </td>
+			<td align="center" valign="center">  Rigid motion by polygonalization </td>
 		</tr>
 	</table>
 </p>
@@ -205,39 +193,36 @@ http://ipol-geometry.loria.fr/~phuc/ipol_demo/RigidMotion2D/
 		<tr>
 		<td align="center" valign="center">
 			<a href="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Samples/snowflake.png">
-				<img width="150" src="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Samples/snowflake.png" alt="Input image" />
-			</a>	
-		<br />
-		Input image
+				<img width="125" src="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Samples/snowflake.png" alt="Input image" />
+			</a>
 		</td>		
 		<td align="center" valign="center">
 			<a href="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/snowflake_points.eps">
-				<img width="100" src="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/snowflake_points.png" alt="Input points" />
-			</a>	
-		<br />
-		Input points
+				<img width="110" src="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/snowflake_points.png" alt="Input points" />
+			</a>
 		</td>
 		<td align="center" valign="center">
 			<a href="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/snowflake_tpoint.eps">
 				<img width="100" src="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/snowflake_tpoint.png" alt="T_point" />
 			</a>
-		<br />
-		Rigid motion point-by-point
 		</td>
     		<td align="center" valign="center">
 			<a href="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/snowflake_thull.eps">
 				<img width="100" src="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/snowflake_thull.png" alt="T_hull" />
 			</a>
-		<br />
-		Rigid motion by convex hull
 		</td>  
 		<td align="center" valign="center">
 			<a href="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/snowflake_tpoly.eps">
 				<img width="100" src="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/snowflake_tpoly.png" alt="T_poly" />
 			</a>
-		<br />
-		Rigid motion by polygonalization
 		</td>  	
+		</tr>
+		<tr>
+			<td align="center" valign="center">  Input image </td>
+			<td align="center" valign="center">  Input points </td>
+			<td align="center" valign="center">  Rigid motion point-by-point </td>
+			<td align="center" valign="center">  Rigid motion by convex hull </td>
+			<td align="center" valign="center">  Rigid motion by polygonalization </td>
 		</tr>
 	</table>
 </p>
