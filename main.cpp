@@ -223,7 +223,7 @@ int main(int argc, char** argv)
         aBoard.saveSVG(filename.c_str());
     }
     aBoard.clear();
-
+    /*
     //Remove temporary files
     filename="rm "+outputFile+".txt";
     system(filename.c_str());
@@ -231,7 +231,8 @@ int main(int argc, char** argv)
     system(filename.c_str());
     filename="rm "+outputFile+"_poly.txt";
     system(filename.c_str());
-
+    */
+    cerr<<"Well done !"<<endl;
     return 0;
 }
 
