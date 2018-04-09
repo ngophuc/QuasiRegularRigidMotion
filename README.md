@@ -27,25 +27,25 @@ http://ipol-geometry.loria.fr/~phuc/ipol_demo/RigidMotion2D/
 		Input image
 		</td>		
 		<td align="center" valign="center">
-			<a href="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/pentagonNoise4.pdf">
-				<img width="150" src="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/pentagonNoise4.png" alt="Input curve" />
+			<a href="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/circle10_points.eps">
+				<img width="150" src="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/circle10_points.png" alt="Input points" />
 			</a>	
 		<br />
 		Input curve
 		</td>
 		<td align="center" valign="center">
-			<a href="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/pentagonNoise4DP.pdf">
-				<img width="150" src="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/pentagonNoise4DP.png" alt="DP result" />
+			<a href="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/circle10_tpoint.eps">
+				<img width="150" src="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/circle10_tpoint.png" alt="T_point" />
 			</a>
 		<br />
-		Dominant points (without optimisation)
+		Rigid motion point-by-point
 		</td>
     <td align="center" valign="center">
 			<a href="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/pentagonNoise4newDP.pdf">
-				<img width="150" src="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/pentagonNoise4newDP.png" alt="DP result" />
+				<img width="150" src="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/pentagonNoise4newDP.png" alt="T_hull" />
 			</a>
 		<br />
-		Dominant points (with optimisation)
+		Rigid motion by convex hull
 		</td>  
 		</tr>
 	</table>
