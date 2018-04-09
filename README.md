@@ -14,7 +14,7 @@ http://ipol-geometry.loria.fr/~phuc/ipol_demo/RigidMotion2D/
 
 <p>File <a href="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Samples/circle10.pgm">circle10.pgm</a>: </p>&#x000A;&#x000A;
 <pre class="code highlight js-syntax-highlight plaintext">
-<code>./testRigidTransform -i ../Samples/circle10.pgm -o ../Results/circle10 -d ../ImaGene-forIPOL &#x000A;--maxScale 10 --samplingStep 1.0</code>
+<code>./testRigidTransform -i ../Samples/circle10.pgm -o ../Results/circle10 -e -a 0.1 -b 0.2 -t 0.23</code>
 </pre>&#x000A;&#x000A;
 <p>
 	<table cellpadding="5">
@@ -53,7 +53,7 @@ http://ipol-geometry.loria.fr/~phuc/ipol_demo/RigidMotion2D/
 
 <p>File <a href="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Samples/square21.pgm">square21.pgm</a>: </p>&#x000A;&#x000A;
 <pre class="code highlight js-syntax-highlight plaintext">
-<code>./testRigidTransform -i ../Samples/square21.pgm -o ../Results/square21 -d ../ImaGene-forIPOL &#x000A;--maxScale 10 --samplingStep 1.0</code>
+<code>./testRigidTransform -i ../Samples/square21.pgm -o ../Results/square21 -e -a 0.0 -b 0.0 -t 0.23</code>
 </pre>&#x000A;&#x000A;
 <p>
 	<table cellpadding="5">
@@ -90,16 +90,16 @@ http://ipol-geometry.loria.fr/~phuc/ipol_demo/RigidMotion2D/
 	</table>
 </p>
 
-<p>File <a href="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Samples/circle50Noise4.sdp">circle50Noise4.sdp</a>: </p>&#x000A;&#x000A;
+<p>File <a href="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Samples/flower.pgm">flower.pgm</a>: </p>&#x000A;&#x000A;
 <pre class="code highlight js-syntax-highlight plaintext">
-<code>./testRigidTransform -i ../Samples/circle50Noise4.sdp -o ../Results/circle50Noise4 -d ../ImaGene-forIPOL &#x000A;--maxScale 10 --samplingStep 1.0</code>
+<code>./testRigidTransform -i ../Samples/flower.pgm -o ../Results/flower -e -a 0.1 -b 0.3 -t 0.314</code>
 </pre>&#x000A;&#x000A;
 <p>
 	<table cellpadding="5">
 		<tr>
 		<td align="center" valign="center">
-			<a href="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Samples/circle50Noise4.png">
-				<img width="150" src="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Samples/circle50Noise4.png" alt="Input image" />
+			<a href="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Samples/flower.png">
+				<img width="150" src="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Samples/flower.png" alt="Input image" />
 			</a>	
 		<br />
 		Input image
@@ -129,16 +129,16 @@ http://ipol-geometry.loria.fr/~phuc/ipol_demo/RigidMotion2D/
 	</table>
 </p>
 
-<p>File <a href="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Samples/CircleRect.sdp">CircleRect.sdp</a>: </p>&#x000A;&#x000A;
+<p>File <a href="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Samples/leaf.pgm">leaf.pgm</a>: </p>&#x000A;&#x000A;
 <pre class="code highlight js-syntax-highlight plaintext">
-<code>./testRigidTransform -i ../Samples/CircleRect.sdp -o ../Results/CircleRect -d ../ImaGene-forIPOL &#x000A;--maxScale 10 --samplingStep 1.0</code>
+<code>./testRigidTransform -i ../Samples/leaf.pgm -o ../Results/leaf -e -a 0.1 -b 0.1 -t 0.314</code>
 </pre>&#x000A;&#x000A;
 <p>
 	<table cellpadding="5">
 		<tr>
 		<td align="center" valign="center">
-			<a href="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Samples/CircleRect.png">
-				<img width="150" src="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Samples/CircleRect.png" alt="Input image" />
+			<a href="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Samples/leaf.png">
+				<img width="150" src="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Samples/leaf.png" alt="Input image" />
 			</a>	
 		<br />
 		Input image
@@ -168,16 +168,16 @@ http://ipol-geometry.loria.fr/~phuc/ipol_demo/RigidMotion2D/
 	</table>
 </p>
 
-<p>File <a href="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Samples/flower100Noise4.sdp">flower100Noise4.sdp</a>: </p>&#x000A;&#x000A;
+<p>File <a href="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Samples/snowflake.pgm">snowflake.pgm</a>: </p>&#x000A;&#x000A;
 <pre class="code highlight js-syntax-highlight plaintext">
-<code>./testRigidTransform -i ../Samples/flower100Noise4.sdp -o ../Results/flower100Noise4 -d ../ImaGene-forIPOL &#x000A;--maxScale 10 --samplingStep 1.0</code>
+<code>./testRigidTransform -i ../Samples/snowflake.pgm -o ../Results/snowflake -e -a 0.2 -b 0.2 -t 0.314</code>
 </pre>&#x000A;&#x000A;
 <p>
 	<table cellpadding="5">
 		<tr>
 		<td align="center" valign="center">
-			<a href="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Samples/flower100Noise4.png">
-				<img width="150" src="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Samples/flower100Noise4.png" alt="Input image" />
+			<a href="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Samples/snowflake.png">
+				<img width="150" src="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Samples/snowflake.png" alt="Input image" />
 			</a>	
 		<br />
 		Input image
