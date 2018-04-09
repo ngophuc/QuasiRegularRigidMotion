@@ -71,7 +71,7 @@ int main(int argc, char** argv)
     filename=outputFile+".txt";
     int width=0, height=0;
     int** tabLabels=readConnectedComponent(filename,width,height);
-    vector<int> vecLabels=getLabelVector(tabLabels,width,height);
+    ///vector<int> vecLabels=getLabelVector(tabLabels,width,height);
     vector<vector<Point> > vecConnectedComponent=getLabelPoints(tabLabels,width,height);
     //Extract boundaries
     //vector<vector<Point> > aContour=getBoundary4C(tabLabels, width, height,vecConnectedComponent);
@@ -81,6 +81,27 @@ int main(int argc, char** argv)
         exit(-1);
     }
     /********** Extract contour points ***************/
+
+    /********** Save input points ***********/
+    Board2D aBoard;
+    ///HueShadeColorMap<double> hueMap(0.0,vecLabels.size());
+    aBoard << SetMode("PointVector", "Both");
+    size_t id=1;
+    ///for(size_t id=0; id<vecLabels.size(); id++) {
+    ///aBoard << CustomStyle("PointVector",new  CustomColors(hueMap(vecLabels.at(id)),hueMap(vecLabels.at(id))));
+    for (size_t i=0; i<vecConnectedComponent.at(id).size(); i++)
+        aBoard << Point(vecConnectedComponent.at(id).at(i)[1],-vecConnectedComponent.at(id).at(i)[0]);
+    ///}
+    if(eps){
+        filename=outputFile+"_points.eps";
+        aBoard.saveEPS(filename.c_str());
+    }
+    else{
+        filename=outputFile+"_points.svg";
+        aBoard.saveSVG(filename.c_str());
+    }
+    aBoard.clear();
+    /********** Save input points ***********/
 
     /********** Verify isolated points ***********/
     if(aContour.size()>2){
@@ -135,8 +156,6 @@ int main(int argc, char** argv)
     T[0]=a;
     T[1]=b;
     T[2]=theta;
-    Board2D aBoard;
-    ///HueShadeColorMap<double> hueMap(0.0,vecLabels.size());
     /******************/
     /**** Tpoint ******/
     /******************/
@@ -167,7 +186,7 @@ int main(int argc, char** argv)
     vector<vector<RealPoint> > tvecHull;
     vector<vector<Point> > tPtsHull=transformPolygon(vecConvexhull, tvecHull, T);
     aBoard << SetMode("PointVector", "Both");
-    size_t id=1;
+    id=1;
     ///for(size_t id=0; id<vecLabels.size(); id++) {
     ///aBoard << CustomStyle("PointVector",new  CustomColors(hueMap(vecLabels.at(id)),hueMap(vecLabels.at(id))));
     for (size_t i=0; i<tPtsHull.at(id).size(); i++)
@@ -213,7 +232,6 @@ int main(int argc, char** argv)
     filename="rm "+outputFile+"_poly.txt";
     system(filename.c_str());
 
-    cerr<<"Well done !"<<endl;
     return 0;
 }
 
