@@ -79,12 +79,12 @@ http://ipol-geometry.loria.fr/~phuc/ipol_demo/RigidMotion2D/
 		</td>
     		<td align="center" valign="center">
 			<a href="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/square21_thull.eps">
-				<img width="90" src="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/square21_thull.png" alt="T_hull" />
+				<img width="100" src="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/square21_thull.png" alt="T_hull" />
 			</a>
 		</td>  
 		<td align="center" valign="center">
 			<a href="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/square21_tpoly.eps">
-				<img width="90" src="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/square21_tpoly.png" alt="T_poly" />
+				<img width="100" src="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Results/square21_tpoly.png" alt="T_poly" />
 			</a>
 		</td>  	
 		</tr>
