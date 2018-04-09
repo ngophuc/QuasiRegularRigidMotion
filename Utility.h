@@ -19,7 +19,7 @@ typedef double transformation[3]; // a transformation (a,b,theta) !
 
 #define ESP_DOUBLE 1e-6
 #define DELTA 0.001
-#define OBJ 0
+#define OBJ 255
 
 /********** Find element **********/
 bool isExist(const vector<int>& vec, int v);

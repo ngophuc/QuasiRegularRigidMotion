@@ -4,7 +4,7 @@
 #include "Utility.h"
 
 /*** Transform points ***/
-Image transfomPoints(string filename, transformation T);
+Image transfomPoints(string filename, transformation T, int obj=0);
 /*** Transform polygone ***/
 vector<vector<Point> > transformPolygon(const vector<vector<Point> >& polyLine, vector<vector<RealPoint> >& tPolyLine, transformation t);
 

@@ -46,6 +46,6 @@ typedef ImageContainerBySTLVector<Domain, unsigned char> Image;
 typedef ConstImageAdapter<Image, Domain, functors::Identity, bool, DGtal::functors::Thresholder<Image::Value> > ConstImageAdapterForThresholderImage;
 typedef GrayscaleColorMap<unsigned char> Gray;
 
-void getConnectedComponent(string input, string output, int threshold, int typeConnectedObject, int typeConnectedBackground);
+int getConnectedComponent(string input, string output, int threshold, int typeConnectedObject, int typeConnectedBackground);
 
 #endif // CONNECTEDCOMPONENT_H

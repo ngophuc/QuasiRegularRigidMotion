@@ -1,7 +1,7 @@
 #include "RigidTransform.h"
 
 /*** Transform points ****/
-Image transfomPoints(string filename, transformation T)
+Image transfomPoints(string filename, transformation T, int obj)
 {
     transformation Ttmp;
     int marge = 20;
@@ -19,7 +19,7 @@ Image transfomPoints(string filename, transformation T)
             Point p(i-widthImg/2, j-heightImg/2);
             RealPoint rp=backwardTransformPoint(p,Ttmp);
             Point tp(round(rp[0])+widthImg/2,round(rp[1])+heightImg/2);
-            if(!(tp[0]<0 || tp[0]>=widthImg || tp[1]<0 || tp[1]>=heightImg) && imageIn(tp)==OBJ)
+            if(!(tp[0]<0 || tp[0]>=widthImg || tp[1]<0 || tp[1]>=heightImg) && imageIn(tp)==obj)
                 tvecPts.push_back(Point(i,j));
         }
     //Convert vector to img
@@ -28,7 +28,7 @@ Image transfomPoints(string filename, transformation T)
     Domain tdomain(pMin-Point(marge,marge),pMax+Point(marge,marge));
     Image imageOut(tdomain);
     for(vector<Point>::iterator it=tvecPts.begin();it!=tvecPts.end();it++)
-        imageOut.setValue(*it,255-OBJ);
+        imageOut.setValue(*it,OBJ);
     return imageOut;
 }
 /*** Transform points ****/

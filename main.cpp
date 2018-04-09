@@ -67,7 +67,7 @@ int main(int argc, char** argv)
 
     string filename;
     /********** Extract contour points ***************/
-    getConnectedComponent(inputFile.c_str(),outputFile.c_str(),127,4,4);
+    int obj=getConnectedComponent(inputFile.c_str(),outputFile.c_str(),127,4,4);
     filename=outputFile+".txt";
     int width=0, height=0;
     int** tabLabels=readConnectedComponent(filename,width,height);
@@ -159,13 +159,14 @@ int main(int argc, char** argv)
     /******************/
     /**** Tpoint ******/
     /******************/
-    Image imageOut=transfomPoints(inputFile, T);
+    if(obj==1) obj=OBJ;
+    Image imageOut=transfomPoints(inputFile, T, obj);
     filename=outputFile+"_tpoint.pgm";
     PGMWriter<Image>::exportPGM(filename,imageOut);
     Image image = PGMReader<Image>::importPGM(filename);
     vector<Point> tvecPoint;
     for ( Domain::ConstIterator it = image.domain().begin(); it != image.domain().end(); ++it )
-        if(image(*it)==(255-OBJ))
+        if(image(*it)==OBJ)
             tvecPoint.push_back(*it);
     aBoard << SetMode("PointVector", "Both");
     for(vector<Point>::const_iterator it=tvecPoint.begin(); it != tvecPoint.end(); it++)
@@ -186,7 +187,6 @@ int main(int argc, char** argv)
     vector<vector<RealPoint> > tvecHull;
     vector<vector<Point> > tPtsHull=transformPolygon(vecConvexhull, tvecHull, T);
     aBoard << SetMode("PointVector", "Both");
-    id=1;
     ///for(size_t id=0; id<vecLabels.size(); id++) {
     ///aBoard << CustomStyle("PointVector",new  CustomColors(hueMap(vecLabels.at(id)),hueMap(vecLabels.at(id))));
     for (size_t i=0; i<tPtsHull.at(id).size(); i++)
@@ -208,7 +208,6 @@ int main(int argc, char** argv)
     vector<vector<RealPoint> > tvecPolygon;
     vector<vector<Point> > tPtsPoly=transformPolygon(vecPolygon, tvecPolygon, T);
     aBoard << SetMode("PointVector", "Both");
-    id=1;
     ///for(size_t id=0; id<vecLabels.size(); id++) {
     ///aBoard << CustomStyle("PointVector",new  CustomColors(hueMap(vecLabels.at(id)),hueMap(vecLabels.at(id))));
     for (size_t i=0; i<tPtsPoly.at(id).size(); i++)

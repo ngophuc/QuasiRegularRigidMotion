@@ -374,7 +374,7 @@ void generateTextImage(vector<Region> &regions, Domain domain, string filename, 
     outfile.close();
 }
 
-void getConnectedComponent(string input, string output, int threshold, int typeConnectedObject, int typeConnectedBackground)
+int getConnectedComponent(string input, string output, int threshold, int typeConnectedObject, int typeConnectedBackground)
 {
     functors::Identity df;
     //Read image
@@ -407,4 +407,7 @@ void getConnectedComponent(string input, string output, int threshold, int typeC
     //string filename=output+".svg";
     coloringConnectedComponent(thresholderImage, idRegions, regions);//,filename.c_str()
     generateTextImage(regions, domainThresholderImage, output);
+
+    Point p(0,0);//(regions.at(0).points.at(0)[0], regions.at(0).points.at(0)[1]);
+    return (int)thresholderImage(p);
 }
