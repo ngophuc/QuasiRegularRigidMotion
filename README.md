@@ -159,7 +159,7 @@ http://ipol-geometry.loria.fr/~phuc/ipol_demo/RigidMotion2D/
 		<tr>
 		<td align="center" valign="center">
 			<a href="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Samples/leaf.png">
-				<img width="150" src="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Samples/leaf.png" alt="Input image" />
+				<img width="120" src="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Samples/leaf.png" alt="Input image" />
 			</a>	
 		<br />
 		Input image
@@ -205,7 +205,7 @@ http://ipol-geometry.loria.fr/~phuc/ipol_demo/RigidMotion2D/
 		<tr>
 		<td align="center" valign="center">
 			<a href="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Samples/snowflake.png">
-				<img width="150" src="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Samples/snowflake.png" alt="Input image" />
+				<img width="120" src="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Samples/snowflake.png" alt="Input image" />
 			</a>	
 		<br />
 		Input image
