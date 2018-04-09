@@ -1,7 +1,11 @@
 #ifndef UTLITY_H
 #define UTLITY_H
-
+#include "DGtal/images/ImageSelector.h"
+#include "DGtal/io/readers/PGMReader.h"
+#include "DGtal/images/imagesSetsUtils/SetFromImage.h"
 #include "DGtal/helpers/StdDefs.h"
+#include "DGtal/io/boards/Board2D.h"
+
 #include <vector>
 #include <algorithm>
 
@@ -9,9 +13,13 @@ using namespace std;
 using namespace DGtal;
 using namespace Z2i;
 
+typedef vector<Point>::const_iterator ConstIterator;
+typedef ImageSelector <Domain, unsigned char>::Type Image;
 typedef double transformation[3]; // a transformation (a,b,theta) !
 
 #define ESP_DOUBLE 1e-6
+#define DELTA 0.001
+#define OBJ 0
 
 /********** Find element **********/
 bool isExist(const vector<int>& vec, int v);

@@ -1,24 +1,11 @@
-#include "DGtal/images/ImageSelector.h"
-#include "DGtal/io/readers/PGMReader.h"
-#include "DGtal/images/imagesSetsUtils/SetFromImage.h"
-#include "DGtal/helpers/StdDefs.h"
-#include "DGtal/io/boards/Board2D.h"
-
 #include "Utility.h"
 #include "ConnectedComponent.h"
+#include "RigidTransform.h"
 
 #include <boost/program_options/options_description.hpp>
 #include <boost/program_options/parsers.hpp>
 #include <boost/program_options/variables_map.hpp>
 namespace po=boost::program_options;
-
-using namespace std;
-using namespace DGtal;
-using namespace Z2i;
-
-typedef vector<Point>::const_iterator ConstIterator;
-
-#define DELTA 0.001
 
 /*** Connected component extraction ***/
 int** readConnectedComponent(string filename, int& width, int& height);
@@ -31,6 +18,9 @@ vector<vector<Point> > getBoundary8C(int** tabLabels, int width, int height, vec
 vector<Point> computeConvexHull(const vector<Point>& vecPoint);
 /*** Polygon extraction ***/
 vector<Point> getPolygon(int** tabLabels, vector<Point>& vecBoundary, vector<Point>& polyline);
+/*** Verify polygon ***/
+bool verifyLengthSegPolygon(const vector<Point>& vecPolygon);
+bool verifyAnglePolygon(const vector<Point>& vecPolygon);
 
 int main(int argc, char** argv)
 {
@@ -43,6 +33,7 @@ int main(int argc, char** argv)
             ("tx,a", po::value<double>()->default_value(0.0), "x-translation.")
             ("ty,b", po::value<double>()->default_value(0.0), "y-translation.")
             ("theta,t", po::value<double>()->default_value(0.0), "rotation angle.")
+            ("regular,r","with quasi-regular verification.")
             ("eps,e","set output with eps format");
 
     bool parseOK=true;
@@ -62,6 +53,7 @@ int main(int argc, char** argv)
         return 0;
     }
     bool eps = vm.count("eps");
+    bool reg = vm.count("regular");
     bool paramTransf=vm.count("tx") && vm.count("ty") && vm.count("theta");
     double a=0.0, b=0.0, theta=0.0;
     if (paramTransf) {
@@ -85,15 +77,19 @@ int main(int argc, char** argv)
     //vector<vector<Point> > aContour=getBoundary4C(tabLabels, width, height,vecConnectedComponent);
     vector<vector<Point> > aContour=getBoundary8C(tabLabels, width, height,vecConnectedComponent);
     if(aContour.size()==0) {
-        cout<<"Error aContour.size()=0"<<endl;
+        cerr<<"Error aContour.size()=0"<<endl;
         exit(-1);
     }
     /********** Extract contour points ***************/
 
     /********** Verify isolated points ***********/
+    if(aContour.size()>2){
+        cerr<<"Error multiple objets in the image"<<endl;
+        exit(-1);
+    }
     for(size_t it_contour=0; it_contour<aContour.size(); it_contour++)
-        if(aContour.at(it_contour).size()<3){
-            cout<<"Error isolated point"<<endl;
+        if(aContour.at(it_contour).size()<4){
+            cerr<<"Error triangular contour"<<endl;
             exit(-1);
         }
     /********** Verify isolated points ***********/
@@ -112,50 +108,113 @@ int main(int argc, char** argv)
         vector<Point> poly=getPolygon(tabLabels, aContour.at(it_contour),vecConvexhull.at(it_contour));
         vecPolygon.push_back(poly);
     }
-
-    Board2D aBoard;
-    HueShadeColorMap<double> hueMap(0.0,vecLabels.size());
-    for(size_t id=0; id<vecLabels.size(); id++) {
-        aBoard << SetMode("PointVector", "Both");
-        aBoard << CustomStyle("PointVector",new  CustomColors(hueMap(vecLabels.at(id)),hueMap(vecLabels.at(id))));
-        for (size_t i=0; i<vecPolygon.at(id).size(); i++)
-            aBoard << vecPolygon.at(id).at(i);
-        aBoard.setLineWidth(5.0);
-        aBoard.setPenColor(hueMap(vecLabels.at(id)));
-        for (size_t i=0; i<vecPolygon.at(id).size()-1; i++)
-            aBoard.drawLine(vecPolygon.at(id).at(i)[0],vecPolygon.at(id).at(i)[1],vecPolygon.at(id).at(i+1)[0],vecPolygon.at(id).at(i+1)[1]);
-        aBoard.drawLine(vecPolygon.at(id).back()[0],vecPolygon.at(id).back()[1],vecPolygon.at(id).front()[0],vecPolygon.at(id).front()[1]);
+    ofstream outfile;
+    string output=outputFile+"_poly.txt";
+    outfile.open(output.c_str());
+    for(size_t it_contour=0; it_contour<aContour.size(); it_contour++) {
+        for(vector<Point>::const_iterator it=vecPolygon.at(it_contour).begin(); it!=vecPolygon.at(it_contour).end(); it++)
+            outfile<<(*it)[0]<<" "<<(*it)[1]<<" ";
+        outfile<<endl;
     }
+    outfile.close();
+    /********** Extract polygon from polyline ************/
+
+    /********** Verify angle + length polygon ***********/
+    if(reg)
+        for(size_t it_contour=0; it_contour<aContour.size(); it_contour++) {
+            bool isLength=verifyLengthSegPolygon(vecPolygon.at(it_contour));
+            bool isAngle=verifyAnglePolygon(vecPolygon.at(it_contour));
+            if(!isLength || !isAngle) {
+                cerr<<"Polygon is not quasi regular : "<<isLength<<" and "<<isAngle<<endl;
+                exit(-1);
+            }
+        }
+    /********** Verify angle + length polygon **********/
+
+    transformation T;
+    T[0]=a;
+    T[1]=b;
+    T[2]=theta;
+    Board2D aBoard;
+    ///HueShadeColorMap<double> hueMap(0.0,vecLabels.size());
+    /******************/
+    /**** Tpoint ******/
+    /******************/
+    Image imageOut=transfomPoints(inputFile, T);
+    filename=outputFile+"_tpoint.pgm";
+    PGMWriter<Image>::exportPGM(filename,imageOut);
+    Image image = PGMReader<Image>::importPGM(filename);
+    vector<Point> tvecPoint;
+    for ( Domain::ConstIterator it = image.domain().begin(); it != image.domain().end(); ++it )
+        if(image(*it)==(255-OBJ))
+            tvecPoint.push_back(*it);
+    aBoard << SetMode("PointVector", "Both");
+    for(vector<Point>::const_iterator it=tvecPoint.begin(); it != tvecPoint.end(); it++)
+        aBoard << Point((*it)[0],(*it)[1]);
     if(eps){
-        //filename=outputFile+"_Polygon.eps";
         filename=outputFile+"_tpoint.eps";
         aBoard.saveEPS(filename.c_str());
+    }
+    else{
+        filename=outputFile+"_tpoint.svg";
+        aBoard.saveSVG(filename.c_str());
+    }
+    aBoard.clear();
+
+    /*****************/
+    /**** Thull ******/
+    /*****************/
+    vector<vector<RealPoint> > tvecHull;
+    vector<vector<Point> > tPtsHull=transformPolygon(vecConvexhull, tvecHull, T);
+    aBoard << SetMode("PointVector", "Both");
+    size_t id=1;
+    ///for(size_t id=0; id<vecLabels.size(); id++) {
+    ///aBoard << CustomStyle("PointVector",new  CustomColors(hueMap(vecLabels.at(id)),hueMap(vecLabels.at(id))));
+    for (size_t i=0; i<tPtsHull.at(id).size(); i++)
+        aBoard << Point(tPtsHull.at(id).at(i)[1],-tPtsHull.at(id).at(i)[0]);
+    ///}
+    if(eps){
         filename=outputFile+"_thull.eps";
         aBoard.saveEPS(filename.c_str());
+    }
+    else{
+        filename=outputFile+"_thull.svg";
+        aBoard.saveSVG(filename.c_str());
+    }
+    aBoard.clear();
+
+    /*****************/
+    /**** Tpoly ******/
+    /*****************/
+    vector<vector<RealPoint> > tvecPolygon;
+    vector<vector<Point> > tPtsPoly=transformPolygon(vecPolygon, tvecPolygon, T);
+    aBoard << SetMode("PointVector", "Both");
+    id=1;
+    ///for(size_t id=0; id<vecLabels.size(); id++) {
+    ///aBoard << CustomStyle("PointVector",new  CustomColors(hueMap(vecLabels.at(id)),hueMap(vecLabels.at(id))));
+    for (size_t i=0; i<tPtsPoly.at(id).size(); i++)
+        aBoard << Point(tPtsPoly.at(id).at(i)[1],-tPtsPoly.at(id).at(i)[0]);
+    ///}
+    if(eps){
         filename=outputFile+"_tpoly.eps";
         aBoard.saveEPS(filename.c_str());
     }
     else{
-        //filename=outputFile+"_Polygon.svg";
-        filename=outputFile+"_tpoint.svg";
-        aBoard.saveSVG(filename.c_str());
-        filename=outputFile+"_thull.svg";
-        aBoard.saveSVG(filename.c_str());
         filename=outputFile+"_tpoly.svg";
         aBoard.saveSVG(filename.c_str());
     }
-    /********** Extract polygon from polyline ************/
+    aBoard.clear();
 
-    /********** Verify angle + length polygon ***********/
-    /********** Verify angle + length polygon **********/
+    //Remove temporary files
+    filename="rm "+outputFile+".txt";
+    system(filename.c_str());
+    filename="rm "+outputFile+"_tpoint.pgm";
+    system(filename.c_str());
+    filename="rm "+outputFile+"_poly.txt";
+    system(filename.c_str());
 
-    /********** Transform polygon ***********/
-    /********** Transform polygon **********/
-
-    /********** Digitize the transformed polygon **********/
-    /********** Digitize the transformed polygon **********/
-    cout<<"Well done !"<<endl;
-    return 1;
+    cerr<<"Well done !"<<endl;
+    return 0;
 }
 
 /*** Read connected component file ***/
@@ -583,3 +642,33 @@ vector<Point> getPolygon(int** tabLabels, vector<Point>& vecBoundary, vector<Poi
     return polygon;
 }
 /*** Polygon extraction ***/
+
+/*** Verify polygon ***/
+bool verifyLengthSegPolygon(const vector<Point>& vecPolygon) {
+    for(vector<Point>::const_iterator it=vecPolygon.begin(); it+1!=vecPolygon.end(); it++)
+        if(distancePoints(*it,*(it+1))<2)//*sqrt(2)
+            return false;
+    //last segment
+    if(distancePoints(vecPolygon.front(),vecPolygon.back())<2*sqrt(2))
+        return false;
+    return true;
+}
+
+bool verifyAnglePolygon(const vector<Point>& vecPolygon){
+    //first angle
+    double angle=acuteAngle(vecPolygon.back(),vecPolygon.front(),vecPolygon.at(1));
+    if(angle<M_PI/2.0)
+        return false;
+    for(vector<Point>::const_iterator it=vecPolygon.begin()+1; it+1!=vecPolygon.end(); it++) {
+        angle=acuteAngle(*(it-1),*it,*(it+1));
+        if(angle<M_PI/2.0)
+            return false;
+    }
+    //last angle
+    angle=acuteAngle(vecPolygon.at(vecPolygon.size()-2),vecPolygon.back(),vecPolygon.front());
+    if(distancePoints(vecPolygon.front(),vecPolygon.back())<2*sqrt(2))
+        return false;
+    return true;
+}
+
+/*** Verify polygon ***/
