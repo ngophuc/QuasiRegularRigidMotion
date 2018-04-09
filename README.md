@@ -51,7 +51,7 @@ http://ipol-geometry.loria.fr/~phuc/ipol_demo/RigidMotion2D/
 	</table>
 </p>
 
-<p>File <a href="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Samples/circle50.sdp">circle50.sdp</a>: </p>&#x000A;&#x000A;
+<p>File <a href="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Samples/square21.pgm">square21.pgm</a>: </p>&#x000A;&#x000A;
 <pre class="code highlight js-syntax-highlight plaintext">
 <code>./testRigidTransform -i ../Samples/square21.pgm -o ../Results/square21 -d ../ImaGene-forIPOL &#x000A;--maxScale 10 --samplingStep 1.0</code>
 </pre>&#x000A;&#x000A;
@@ -59,8 +59,8 @@ http://ipol-geometry.loria.fr/~phuc/ipol_demo/RigidMotion2D/
 	<table cellpadding="5">
 		<tr>
 		<td align="center" valign="center">
-			<a href="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Samples/circle50.png">
-				<img width="150" src="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Samples/circle50.png" alt="Input image" />
+			<a href="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Samples/square21.png">
+				<img width="150" src="https://github.com/ngophuc/QuasiRegularRigidMotion/blob/master/Samples/square21.png" alt="Input image" />
 			</a>	
 		<br />
 		Input image
