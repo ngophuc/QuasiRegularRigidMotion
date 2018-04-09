@@ -10,10 +10,6 @@ cd DGtal ; mkdir buid ; cd build
 cmake ..
 make install
 
-
-
-
-
 Main installation:
 -------------------
 
