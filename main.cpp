@@ -215,6 +215,15 @@ int main(int argc, char** argv)
     /************************/
     int marge=10;
     Point pMin,pMax;
+    //Input points
+    findBoundingBox(vecConnectedComponent.at(id),pMin,pMax);
+    Image imgInPoint(Domain(pMin-Point(marge,marge),pMax+Point(marge,marge)));
+    for (vector<Point>::const_iterator it = vecConnectedComponent.at(id).begin(); it != vecConnectedComponent.at(id).end(); it++) {
+        imgInPoint.setValue(*it,OBJ);
+        aBoard << CustomStyle("PointVector", new CustomColors( Color::Silver, Color::Silver)) << *it;
+    }
+    filename=outputFile+"_points.pgm";
+    PGMWriter<Image>::exportPGM(filename,imgInPoint);
     //Tpoint
     findBoundingBox(tvecPoint,pMin,pMax);
     Image imgOutPoint(Domain(pMin-Point(marge,marge),pMax+Point(marge,marge)));
