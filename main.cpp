@@ -218,37 +218,29 @@ int main(int argc, char** argv)
     //Input points
     findBoundingBox(vecConnectedComponent.at(id),pMin,pMax);
     Image imgInPoint(Domain(pMin-Point(marge,marge),pMax+Point(marge,marge)));
-    for (vector<Point>::const_iterator it = vecConnectedComponent.at(id).begin(); it != vecConnectedComponent.at(id).end(); it++) {
+    for (vector<Point>::const_iterator it = vecConnectedComponent.at(id).begin(); it != vecConnectedComponent.at(id).end(); it++)
         imgInPoint.setValue(*it,OBJ);
-        aBoard << CustomStyle("PointVector", new CustomColors( Color::Silver, Color::Silver)) << *it;
-    }
     filename=outputFile+"_points.pgm";
     PGMWriter<Image>::exportPGM(filename,imgInPoint);
     //Tpoint
     findBoundingBox(tvecPoint,pMin,pMax);
     Image imgOutPoint(Domain(pMin-Point(marge,marge),pMax+Point(marge,marge)));
-    for (vector<Point>::const_iterator it = tvecPoint.begin(); it != tvecPoint.end(); it++) {
+    for (vector<Point>::const_iterator it = tvecPoint.begin(); it != tvecPoint.end(); it++)
         imgOutPoint.setValue(*it,OBJ);
-        aBoard << CustomStyle("PointVector", new CustomColors( Color::Silver, Color::Silver)) << *it;
-    }
     filename=outputFile+"_tpoint.pgm";
     PGMWriter<Image>::exportPGM(filename,imgOutPoint);
     //Thull
     findBoundingBox(tPtsHull.at(id),pMin,pMax);
     Image imgOutHull(Domain(pMin-Point(marge,marge),pMax+Point(marge,marge)));
-    for (vector<Point>::const_iterator it = tPtsHull.at(id).begin(); it != tPtsHull.at(id).end(); it++) {
+    for (vector<Point>::const_iterator it = tPtsHull.at(id).begin(); it != tPtsHull.at(id).end(); it++)
         imgOutHull.setValue(*it,OBJ);
-        aBoard << CustomStyle("PointVector", new CustomColors( Color::Silver, Color::Silver)) << *it;
-    }
     filename=outputFile+"_thull.pgm";
     PGMWriter<Image>::exportPGM(filename,imgOutHull);
     //Tpoly
     findBoundingBox(tPtsPoly.at(id),pMin,pMax);
     Image imgOutPoly(Domain(pMin-Point(marge,marge),pMax+Point(marge,marge)));
-    for (vector<Point>::const_iterator it = tPtsPoly.at(id).begin(); it != tPtsPoly.at(id).end(); it++) {
+    for (vector<Point>::const_iterator it = tPtsPoly.at(id).begin(); it != tPtsPoly.at(id).end(); it++)
         imgOutPoly.setValue(*it,OBJ);
-        aBoard << CustomStyle("PointVector", new CustomColors( Color::Silver, Color::Silver)) << *it;
-    }
     filename=outputFile+"_tpoly.pgm";
     PGMWriter<Image>::exportPGM(filename,imgOutPoly);
     /************************/
