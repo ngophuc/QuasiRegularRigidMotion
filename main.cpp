@@ -71,10 +71,7 @@ int main(int argc, char** argv)
     filename=outputFile+".txt";
     int width=0, height=0;
     int** tabLabels=readConnectedComponent(filename,width,height);
-    ///vector<int> vecLabels=getLabelVector(tabLabels,width,height);
     vector<vector<Point> > vecConnectedComponent=getLabelPoints(tabLabels,width,height);
-    //Extract boundaries
-    //vector<vector<Point> > aContour=getBoundary4C(tabLabels, width, height,vecConnectedComponent);
     vector<vector<Point> > aContour=getBoundary8C(tabLabels, width, height,vecConnectedComponent);
     if(aContour.size()==0) {
         cerr<<"Error aContour.size()=0"<<endl;
@@ -84,14 +81,10 @@ int main(int argc, char** argv)
 
     /********** Save input points ***********/
     Board2D aBoard;
-    ///HueShadeColorMap<double> hueMap(0.0,vecLabels.size());
     aBoard << SetMode("PointVector", "Both");
     size_t id=1;
-    ///for(size_t id=0; id<vecLabels.size(); id++) {
-    ///aBoard << CustomStyle("PointVector",new  CustomColors(hueMap(vecLabels.at(id)),hueMap(vecLabels.at(id))));
     for (size_t i=0; i<vecConnectedComponent.at(id).size(); i++)
         aBoard << Point(vecConnectedComponent.at(id).at(i)[1],-vecConnectedComponent.at(id).at(i)[0]);
-    ///}
     if(eps){
         filename=outputFile+"_points.eps";
         aBoard.saveEPS(filename.c_str());
@@ -187,11 +180,8 @@ int main(int argc, char** argv)
     vector<vector<RealPoint> > tvecHull;
     vector<vector<Point> > tPtsHull=transformPolygon(vecConvexhull, tvecHull, T);
     aBoard << SetMode("PointVector", "Both");
-    ///for(size_t id=0; id<vecLabels.size(); id++) {
-    ///aBoard << CustomStyle("PointVector",new  CustomColors(hueMap(vecLabels.at(id)),hueMap(vecLabels.at(id))));
     for (size_t i=0; i<tPtsHull.at(id).size(); i++)
         aBoard << Point(tPtsHull.at(id).at(i)[1],-tPtsHull.at(id).at(i)[0]);
-    ///}
     if(eps){
         filename=outputFile+"_thull.eps";
         aBoard.saveEPS(filename.c_str());
@@ -208,11 +198,8 @@ int main(int argc, char** argv)
     vector<vector<RealPoint> > tvecPolygon;
     vector<vector<Point> > tPtsPoly=transformPolygon(vecPolygon, tvecPolygon, T);
     aBoard << SetMode("PointVector", "Both");
-    ///for(size_t id=0; id<vecLabels.size(); id++) {
-    ///aBoard << CustomStyle("PointVector",new  CustomColors(hueMap(vecLabels.at(id)),hueMap(vecLabels.at(id))));
     for (size_t i=0; i<tPtsPoly.at(id).size(); i++)
         aBoard << Point(tPtsPoly.at(id).at(i)[1],-tPtsPoly.at(id).at(i)[0]);
-    ///}
     if(eps){
         filename=outputFile+"_tpoly.eps";
         aBoard.saveEPS(filename.c_str());
@@ -223,10 +210,44 @@ int main(int argc, char** argv)
     }
     aBoard.clear();
 
+    /************************/
+    /**** Save pgm result ***/
+    /************************/
+    int marge=10;
+    Point pMin,pMax;
+    //Tpoint
+    findBoundingBox(tvecPoint,pMin,pMax);
+    Image imgOutPoint(Domain(pMin-Point(marge,marge),pMax+Point(marge,marge)));
+    for (vector<Point>::const_iterator it = tvecPoint.begin(); it != tvecPoint.end(); it++) {
+        imgOutPoint.setValue(*it,OBJ);
+        aBoard << CustomStyle("PointVector", new CustomColors( Color::Silver, Color::Silver)) << *it;
+    }
+    filename=outputFile+"_tpoint.pgm";
+    PGMWriter<Image>::exportPGM(filename,imgOutPoint);
+    //Thull
+    findBoundingBox(tPtsHull.at(id),pMin,pMax);
+    Image imgOutHull(Domain(pMin-Point(marge,marge),pMax+Point(marge,marge)));
+    for (vector<Point>::const_iterator it = tPtsHull.at(id).begin(); it != tPtsHull.at(id).end(); it++) {
+        imgOutHull.setValue(*it,OBJ);
+        aBoard << CustomStyle("PointVector", new CustomColors( Color::Silver, Color::Silver)) << *it;
+    }
+    filename=outputFile+"_thull.pgm";
+    PGMWriter<Image>::exportPGM(filename,imgOutHull);
+    //Tpoly
+    findBoundingBox(tPtsPoly.at(id),pMin,pMax);
+    Image imgOutPoly(Domain(pMin-Point(marge,marge),pMax+Point(marge,marge)));
+    for (vector<Point>::const_iterator it = tPtsPoly.at(id).begin(); it != tPtsPoly.at(id).end(); it++) {
+        imgOutPoly.setValue(*it,OBJ);
+        aBoard << CustomStyle("PointVector", new CustomColors( Color::Silver, Color::Silver)) << *it;
+    }
+    filename=outputFile+"_tpoly.pgm";
+    PGMWriter<Image>::exportPGM(filename,imgOutPoly);
+    /************************/
+    /**** Save pgm result ***/
+    /************************/
+
     //Remove temporary files
     filename="rm "+outputFile+".txt";
-    system(filename.c_str());
-    filename="rm "+outputFile+"_tpoint.pgm";
     system(filename.c_str());
     filename="rm "+outputFile+"_poly.txt";
     system(filename.c_str());

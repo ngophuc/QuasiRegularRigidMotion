@@ -200,6 +200,8 @@ RealPoint backwardTransformPoint(Point p, const transformation t)
 
 /******** Trasformation *********/
 
+
+
 int pgcd(int a, int b)
 {
     int r;
