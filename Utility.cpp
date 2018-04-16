@@ -186,6 +186,8 @@ double simpleAngle(Point p1, Point p2, Point p3)
 /******** Trasformation *********/
 RealPoint forwardTransformPoint(Point p, const transformation t)
 {
+    if(fabs(t[0])<ESP_DOUBLE && fabs(t[1])<ESP_DOUBLE && fabs(t[2])<ESP_DOUBLE)
+        return p;
     double x=p[0]*cos(t[2])-p[1]*sin(t[2])+t[0];
     double y=p[0]*sin(t[2])+p[1]*cos(t[2])+t[1];
     return RealPoint(x,y);
@@ -193,6 +195,8 @@ RealPoint forwardTransformPoint(Point p, const transformation t)
 
 RealPoint backwardTransformPoint(Point p, const transformation t)
 {
+    if(fabs(t[0])<ESP_DOUBLE && fabs(t[1])<ESP_DOUBLE && fabs(t[2])<ESP_DOUBLE)
+        return p;
     double x= (p[0]-t[0])*cos(t[2])+(p[1]-t[1])*sin(t[2]);
     double y=-(p[0]-t[0])*sin(t[2])+(p[1]-t[1])*cos(t[2]);
     return RealPoint(x,y);
