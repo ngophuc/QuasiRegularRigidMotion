@@ -362,15 +362,16 @@ void generateTextImage(vector<Region> &regions, Domain domain, string filename, 
         }
     }
 
-    for(int i = width-1; i >= 0; i--)//for(int i = 0; i < width; i++)
+    //Attention write as (w,h) => (-y,x) !!!
+    for(int i = 0; i < width; i++)
     {
         for(int j = 0; j < height - 1; j++)
         {
-            outfile << idRegions[j][i] << setw(2);
+            //outfile << idRegions[i][j] << setw(2);
+            outfile << idRegions[i][j] << " ";//PHUC
         }
         outfile << idRegions[i][height - 1] << endl;
     }
-
     outfile.close();
 }
 
